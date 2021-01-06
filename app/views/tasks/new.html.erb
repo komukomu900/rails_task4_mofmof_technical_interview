@@ -1,0 +1,27 @@
+<h1>作成</h1>
+<%= form_with(model: @task, local: true, url: tasks_path) do |f| %>
+  <% if @task.errors.any? %>
+    <div>
+      <h2><%= @task.errors.count %>件のエラーがあります</h2>
+        <ul>
+          <% @task.errors.full_messages.each do |m| %>
+            <li><%= m %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.text_field :name, placeholder: "タスク名" %>
+  </div>
+  <div>
+    <%= f.text_field :content, placeholder: "タスク内容" %>
+  </div>
+  <div>
+    <%= f.select :state, {'未着手':'未着手', '着手':'着手', '完了':'完了'}, {include_blank: '選択してください'} %>
+  </div>
+  <div>
+    <%= f.datetime_select :deadline %>
+  </div>
+  <%= f.submit "登録" %>
+<% end %>
+<%= link_to "タスク一覧", tasks_path %>
