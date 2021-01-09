@@ -1,19 +1,18 @@
 #table構造
 ***
 - Users
-  - id
-  - name
-  - password_digest
+  - name :string
+  - password_digest :string
 ***
 - Tasks
-  - name
-  - contents
-  - state
-  - dead_line
-  - user_id
+  - name :string
+  - contents :text
+  - state :string
+  - dead_line :datetime
+  - user_id :inetger
 ***
 - Labels
-  - user_id
-  - task_id
-  - label_id
+  - user_id :integer
+  - task_id :integer
+  - label_id :integer
 ***

@@ -11,15 +11,19 @@
     </div>
   <% end %>
   <div>
+    <%= f.label :"タスク名" %>
     <%= f.text_field :name, placeholder: "タスク名" %>
   </div>
   <div>
+    <%= f.label :"タスク内容" %>
     <%= f.text_field :content, placeholder: "タスク内容" %>
   </div>
   <div>
+    <%= f.label :"ステータス" %>
     <%= f.select :state, {'未着手':'未着手', '着手':'着手', '完了':'完了'}, {include_blank: '選択してください'} %>
   </div>
   <div>
+    <%= f.label :"締め切り日" %>
     <%= f.datetime_select :deadline %>
   </div>
   <%= f.submit "登録" %>
